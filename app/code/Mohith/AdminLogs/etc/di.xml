@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Mohith\AdminLogs\Api\Data\AdminLogsInterface" type="Mohith\AdminLogs\Model\AdminLogs"/>
+    <preference for="Mohith\AdminLogs\Api\AdminLogsRepositoryInterface"
+                type="Mohith\AdminLogs\Model\AdminLogsRepository"/>
+    <preference for="Mohith\AdminLogs\Api\AdminLogsManagementInterface"
+                type="Mohith\AdminLogs\Model\AdminLogsManagement"/>
+</config>

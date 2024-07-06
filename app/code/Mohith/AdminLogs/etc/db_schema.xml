@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mohith_admin_logs" resource="default" engine="innodb" comment="Mohith Customer Image Details">
+        <column xsi:type="int" padding="11" name="mohith_admin_logs_id" unsigned="true" nullable="false" identity="true"
+                comment="Mohith Admin Logs ID"/>
+        <column xsi:type="text" name="area" nullable="true" comment="Area"/>
+        <column xsi:type="varchar" name="username" nullable="true" length="40" comment="Username"/>
+        <column xsi:type="text" name="ip_address" nullable="false" comment="Ip Address"/>
+        <column xsi:type="text" name="action_type" nullable="false" comment="Action Type"/>
+        <column xsi:type="text" name="action_data" nullable="false" comment="Action Data (JSON)"/>
+        <column xsi:type="text" name="post_action_messages" nullable="false" comment="Action Messages (JSON)"/>
+        <column xsi:type="datetime" default="CURRENT_TIMESTAMP" name="created_at" on_update="false" nullable="false"
+                comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="mohith_admin_logs_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MOHITH_ADMIN_LOGS_USERNAME"
+                    table="mohith_admin_logs" column="username"
+                    referenceTable="admin_user" referenceColumn="username" onDelete="CASCADE"/>
+    </table>
+</schema>

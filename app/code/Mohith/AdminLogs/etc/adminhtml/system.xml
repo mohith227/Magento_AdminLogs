@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @package     Mohith_AdminLogs
+ * @author      Mohith
+ * @license     https://opensource.org/licenses/OSL-3.0 Open Software License v. 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mohith" translate="label" sortOrder="250">
+            <label>Mohith</label>
+        </tab>
+        <section id="admin_logs" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0"
+                 showInStore="0">
+            <class>separator-top</class>
+            <label>Admin Logs</label>
+            <tab>mohith</tab>
+            <resource>Mohith_AdminLogs::config_admin_logs</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Configuration</label>
+                <field id="whitelist_action" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Whitelisted Actions</label>
+                    <frontend_model>Mohith\AdminLogs\Model\Source\FullActionName</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="blacklist_action" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Blacklisted Actions</label>
+                    <frontend_model>Mohith\AdminLogs\Model\Source\FullActionName</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="whitelist_module" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Whitelisted Modules</label>
+                    <frontend_model>Mohith\AdminLogs\Model\Source\ModuleName</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="blacklist_module" translate="label" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Blacklisted Modules</label>
+                    <frontend_model>Mohith\AdminLogs\Model\Source\ModuleName</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="allowed_requests" translate="label" type="multiselect" sortOrder="50" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Allowed Requests</label>
+                    <source_model>Mohith\AdminLogs\Model\Source\Requests</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
